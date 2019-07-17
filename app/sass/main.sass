@@ -1,0 +1,538 @@
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	margin: 0
+	padding: 0
+	&:before, &:after
+		-webkit-box-sizing: border-box
+		-moz-box-sizing: border-box
+		box-sizing: border-box
+
+*::-webkit-input-placeholder
+	color: #666
+	opacity: 1
+
+*:-moz-placeholder
+	color: #666
+	opacity: 1
+
+*::-moz-placeholder
+	color: #666
+	opacity: 1
+
+*:-ms-input-placeholder
+	color: #666
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	color: #666
+body input:required:valid,
+body textarea:required:valid
+	color: #666
+
+html, body
+	height: 100%
+
+body
+	min-width: 320px
+	position: relative
+	overflow-x: hidden
+	font-family: 'Roboto', sans-serif
+
+button
+	border: none
+	background: linear-gradient(90deg, #4499D9 0%, #6CC0F2 100%)
+	border-radius: 5px
+	color: #fff
+	font-weight: bold
+	outline: none
+
+.main-container
+	max-width: 100%
+	overflow: hidden
+
+.wrapper
+	width: 1440px
+	margin: 0 auto
+
+@keyframes a 
+	0%
+		transform: translate3d(0,0,0)
+	100%
+		transform: translate3d(-100vh, 0, 0)			
+
+// HEADER BEGIN
+.header
+	.header__top
+		display: flex
+		flex-direction: row
+		padding: 38px 83px
+		button
+			margin-right: 22px
+		.top__logo
+			flex-grow: 1
+		.top__callback
+			width: 160px
+			height: 45px
+			text-transform: uppercase
+			font-size: 14px	
+			letter-spacing: 0.05em
+			position: relative
+			text-align: right
+			padding-right: 19px
+			&:before
+				content: ''
+				position: absolute
+				top: 10px
+				left: 18px
+				display: block
+				width: 25px
+				height: 25px
+				background-image: url('../img/phone-white.png')
+		.top__callback-mobile
+			display: none
+			width: 25px
+			height: 25px
+			background-image: url('../img/phone-blue.png')
+			background-size: cover
+			background-repeat: no-repeat
+			margin-top: 12px		
+		.top__phone
+			width: 234px
+			height: 45px
+			background: none
+			border: 1px solid #005799
+			color: #000	
+			position: relative
+			font-size: 18px
+			color: #005799
+			&:before
+				content: ''
+				position: absolute
+				top: 10px
+				left: 18px
+				display: block
+				width: 25px
+				height: 25px
+				background-image: url('../img/phone-blue.png')
+		.top__list-container
+			position: relative		
+			.top__list
+				list-style: none
+				margin: 0
+				padding: 0
+				position: absolute
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					top: 19px
+					right: 19px
+					background-image: url('../img/arrow.png')
+					background-position: 0% -1px
+					background-size: cover
+					width: 12px
+					height: 6px
+					transition: transform ease-out 0.5s
+				&:hover
+					&:after	
+						transform: rotate(-90deg)
+				.list__item
+					background: none
+					border: 1px solid #005799
+					border-radius: 5px
+					text-transform: uppercase
+					width: 69px
+					height: 45px
+					text-align: left
+					line-height: 45px
+					font-size: 14px
+					font-weight: bold
+					color: #005799
+					cursor: pointer
+					padding-left: 14px
+				& > *
+					&:not(:first-child)
+						display: none
+				&:hover
+						& > *
+							display: block						
+	.header__banner
+		height: 911px
+		background-image: url('../img/composition.png'), url('../img/pinguin.png'), url('../img/white_gradient.png')
+		background-repeat: no-repeat
+		background-position:  bottom right, bottom left, bottom center
+		position: relative
+		.fog
+			z-index: 2
+			top: 0
+			left: 0
+			overflow: hidden
+			position: relative
+			width: 100%
+			height: 100%
+			pointer-events: none
+			&:before
+				content: ''
+				height: 100%
+				width: 300%
+				position: absolute
+				top: 0
+				left: 0
+				background: url('../img/fog-1.png')
+				background-position: 50%
+				background-size: contain
+				background-repeat: repeat
+				animation: a 60s linear 0s infinite alternate
+			&:after
+				content: ''
+				width: 300%
+				height: 100%
+				position: absolute
+				top: 0
+				left: 0
+				background: url('../img/fog-2.png')
+				background-position: 50%
+				background-size: contain
+				background-repeat: repeat
+				animation: a 30s linear 0s infinite alternate
+		.banner__text
+			width: 526px
+			margin-left: 485px
+			margin-top: 120px
+			.text__heading
+				font-weight: bold
+				font-style: italic
+				font-size: 96px
+				color: #6CC0F2
+				text-transform: uppercase
+				margin: 0
+				line-height: 112px
+				display: inline-block
+			.text__subheading
+				font-weight: 300
+				font-style: italic
+				font-size: 96px
+				color: #6CC0F2
+				text-transform: uppercase
+				margin: 0
+				color: #005799
+				line-height: 112px
+				display: inline-block
+			.text__description
+				font-size: 18px
+				line-height: 27px
+				color: #6F6F6F
+				width: 460px
+			.text__btn
+				width: 220px
+				height: 45px
+				font-size: 14px
+				text-transform: uppercase
+				margin-top: 24px
+				margin-left: 220px
+// HEADER END
+
+// SLIDER BEGIN
+.products
+	text-align: center
+	padding-top: 36px
+	.wrapper
+		width: 1000px
+		position: relative
+		.slide-elipse
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+	.products__heading
+		text-transform: uppercase
+		font-style: italic
+		font-size: 36px
+		line-height: 42px
+		color: #005799
+		margin-bottom: 40px
+	.products__slider
+		list-style: none
+		position: relative
+		.slider__item
+			width: 1000px
+			text-align: left
+			.item__img
+				width: 554px
+				height: 554px
+				border-radius: 50%
+				background-position: center center
+				background-repeat: no-repeat
+				margin-right: 32px
+				float: left
+			.pink
+				background-image: url('../img/slide-snow.png'), url('../img/ballon_pink.png'), url('../img/slide-background.png') 
+			.orange
+				background-image: url('../img/slide-snow.png'), url('../img/ballon_orange.png'), url('../img/slide-background.png')
+			.blue
+				background-image: url('../img/slide-snow.png'), url('../img/ballon_blue.png'), url('../img/slide-background.png')
+			.aqua
+				background-image: url('../img/slide-snow.png'), url('../img/ballon_aqua.png'), url('../img/slide-background.png')
+			.item__heading
+				font-size: 32px
+				line-height: 36px
+				font-style: italic
+				text-transform: uppercase
+				color: #6CC0F2
+				margin-top: 30px
+				display: inline-block
+			.item__subheading
+				text-transform: uppercase	
+				font-size: 32px
+				font-weight: 300
+				font-style: italic
+				color: #005799
+				line-height: 36px
+			.item__description
+				font-size: 18px
+				line-height: 27px
+				color: #6F6F6F
+				margin-top: 24px
+				margin-bottom: 20px
+				text-align: auto
+			.item__application
+				font-size: 24px
+				color: #6CC0F2
+				text-transform: uppercase
+			.item__application-list
+				list-style: none
+				display: flex
+				flex-direction: row
+				.application-list__item
+					width: 75px
+					height: 75px
+					background-image: url(../img/applications.png)
+					background-size: cover
+				.conditioner
+					background-position: 0 0
+				.car
+					background-position-x: -76px
+				.truck
+					background-position-x: -152px
+				.industrial
+					background-position-x: -227px
+			.item__btn
+				width: 220px
+				height: 45px
+				text-transform: uppercase
+				margin-top: 35px
+	.slick-dots
+		display: flex
+		flex-direction: column
+		position: absolute
+		top: 70px
+		left: -98px
+		width: 52px
+		li
+			width: 52px
+			height: 91px
+			margin-bottom: 10px
+			button
+				width: 52px
+				height: 91px
+				&:before
+					content: ''
+					width: 52px
+					height: 91px
+					background-image: url('../img/ballon_pink.png')
+					background-size: cover
+			#slick-slide-control01:before
+				background-image: url('../img/ballon_blue.png')
+			#slick-slide-control02:before
+				background-image: url('../img/ballon_orange.png')
+			#slick-slide-control03:before
+				background-image: url('../img/ballon_aqua.png')			
+// SLIDER END										
+// CALCULATOR BEGIN
+.make-order
+	margin-bottom: 50px
+	text-align: center
+	.make-order__heading
+		font-style: italic
+		font-weight: bold
+		font-size: 36px
+		line-height: 42px
+		color: #005799
+		text-transform: uppercase
+		margin: 82px 0
+	.make-order__table-container
+		display: flex
+		flex-direction: column
+		align-items: center
+		width: 950px
+		margin: 0 auto
+		box-shadow: 0px 0px 8px rgba(68, 153, 217, 0.3)
+		border-radius: 5px
+		padding-bottom: 54px	
+	.make-order__calculator
+		width: 857px
+		.calculator__row-th-heading
+			font-size: 18px
+			color: #6F6F6F
+			height: 72px
+			vertical-align: bottom
+			height: 100px
+			th
+				font-weight: 300
+				text-align: center
+				&:nth-child(2)
+					text-align: left
+		.calculator__row-item
+			font-size: 18px
+			line-height: 27px
+			color: #005799
+			height: 100px
+			&:last-child > td
+				border-top: 3px solid rgba(108, 192, 242, 0.3)
+				padding-top: 33px
+			&:last-child > td:first-child
+				border-top: none	
+			td
+				text-align: center
+				&:nth-child(2)
+					text-align: left
+					width: 150px
+				&:last-child
+					width: 215px		
+			.row-item__img
+				width: 49px
+				height: 81px
+			.row-item__name-heading
+				font-weight: bold
+				font-size: 24px
+				line-height: 31px
+				color: #6CC0F2
+			.row-item__name-subheading
+				font-weight: bold
+				font-size: 24px
+				line-height: 31px
+				color: #005799
+				display: inline-block
+			.row-item__weight
+				font-weight: 300
+				font-size: 18px
+				line-height: 27px
+				color: #005799
+			.row-item__minus-btn
+				background: none
+				color: #005799
+				font-size: 18px
+				line-height: 40px
+			.row-item__input
+				width: 40px
+				height: 40px
+				border: none
+				box-shadow: inset 0px 0px 8px rgba(68, 153, 217, 0.3)
+				border-radius: 5px
+				margin: 0 5px
+				text-align: center
+				font-size: 18px		
+			.row-item__plus-btn
+				background: none
+				color: #005799
+				font-size: 18px
+				line-height: 40px
+			.row-item__price, .row-item__amount
+				font-weight: bold
+				font-size: 24px
+				line-height: 31px
+				color: #6CC0F2
+			.row-item__sum
+				width: 145px
+				height: 50px	
+				border: 1px solid #6CC0F2
+				box-shadow: inset 0px 0px 8px rgba(68, 153, 217, 0.3)
+				border-radius: 5px
+				text-align: center
+				line-height: 50px
+				margin-left: 36px
+				.sum__value-amounts
+					font-weight: bold
+					font-size: 24px
+					line-height: 31px
+					color: #6CC0F2
+	.make-order__calculator-mobile
+		// display: none
+		width: 272px
+		list-style: none
+		.calculator-mobile__row-item
+			border: 1px solid black
+			text-align: left
+			&:nth-child(2)
+				float: left
+				width: 85px
+			.row-item__container
+				.row-item__name-heading
+					display: inline-block
+					font-size: 18px
+					color: #6CC0F2
+				.row-item__name-subheading
+					display: inline-block
+					color: #005799
+				.row-item__weight
+					color: #005799
+			.row-item__img
+				width: 49px
+				height: 85px
+				float: left	
+				margin-right: 15px		
+			.row-item__container-ib
+				display: inline-block
+				width: 145px
+				border: 1px solid black
+				height: 40px
+				& > *
+					vertical-align: 5px
+				.row-item__price
+					font-size: 18px
+					color: #6CC0F2	
+				p
+					display: inline-block
+					float: right
+					color: #005799
+				span
+					vertical-align: 5px
+					color: #6F6F6F
+				.row-item__minus-btn
+					background: none
+					color: #005799
+					font-size: 18px
+					line-height: 40px
+				.row-item__input
+					width: 30px
+					height: 30px
+					border: none
+					box-shadow: inset 0px 0px 8px rgba(68, 153, 217, 0.3)
+					border-radius: 5px
+					margin: 0 5px
+					text-align: center
+					font-size: 18px	
+				.row-item__plus-btn
+					background: none
+					color: #005799
+					font-size: 18px
+					line-height: 40px					
+	.make-order__btn
+		width: 220px
+		height: 45px
+		text-transform: uppercase
+		font-weight: bold
+		font-size: 18px
+		align-self: flex-end
+		margin-right: 5px
+		margin-top: 33px
+					
+
+@import "media" // Всегда в конце

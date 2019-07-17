@@ -1,0 +1,180 @@
+@import "vars"
+
+/*==========  Desktop First  ==========*/
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px)
+	/**/
+
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px)
+	/**/
+
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px)
+	/**/
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 480px)
+	.main-content
+		width: 100vh
+	.header
+		.header__top
+			padding: 13px 22px
+			.top__callback, .top__phone, .top__list
+				display: none 
+			.top__callback-mobile
+				display: block
+			.top__logo
+				img
+					width: 130px
+					height: 47px
+		.header__banner	
+			height: 472px
+			width: 480px
+			background-image: url('../img/background-mobile-baner.png')
+			background-size: contain
+			background-position: bottom center
+			position: relative		
+			.banner__text
+				margin-top: 42px
+				margin-left: 46px
+				width: 480px
+				.text__heading, .text__subheading
+					font-size: 36px
+					line-height: 42px		
+				.text__description
+					display: none
+				.text__btn
+					margin: 0
+					position: absolute
+					bottom: 0
+					left: 50%
+					transform: translate(-50%, -50%)
+	.products
+		.wrapper
+			width: 480px
+			margin: 0
+			.slide-elipse
+				position: absolute
+				top: 0
+				left: 0
+				z-index: 1	
+		.products__slider
+			.slider__item
+				width: 480px
+				text-align: center
+				.item__btn, .item__application, .item__application-list
+					display: none
+				.item__img
+					width: 280px
+					height: 280px
+					background-size: contain
+					display: inline-block
+					margin-right: 0
+				.item__subheading
+					display: inline-block
+				.item__description
+					text-align: left
+					margin-left: 25px
+					margin-right: 25px		
+		.slick-prev
+			left: 100px
+			top: 140px
+			z-index: 1
+		.slick-next
+			right: 100px
+			top: 140px							
+
+@media only screen and (max-width : 320px)
+	.main-content
+		width: 100vh
+	.header
+		.header__banner	
+			height: 472px
+			// background-color: black
+			background-image: url('../img/white_gradient-mobile.png'), url('../img/background-mobile-baner.png') 
+			background-size: contain
+			background-position: center 369px, center 106px
+			// position: relative
+			width: 320px		
+			.banner__text
+				width: 320px
+				position: relative
+				height: 472px
+				margin: 0
+				.text__heading, .text__subheading
+					font-size: 36px
+					line-height: 42px
+					position: absolute
+				.text__heading
+					top: 30px
+					left: 46px
+				.text__subheading
+					top: 79px
+					left: 46px				
+				.text__description
+					display: none
+				.text__btn
+					margin: 0
+					position: absolute
+					bottom: 0
+					left: 50%
+					transform: translate(-50%, -50%)
+	.products
+		.wrapper
+			width: 320px
+			margin: 0
+			.slide-elipse
+				position: absolute
+				top: 0
+				left: 20px
+				z-index: 1	
+		.products__slider
+			.slider__item
+				width: 320px
+				text-align: center
+				.item__btn, .item__application, .item__application-list
+					display: none
+				.item__img
+					width: 280px
+					height: 280px
+					background-size: auto
+					display: inline-block
+					margin-left: 20px
+				.pink
+					background-image: url('../img/slide-snow-mobile.png'), url('../img/ballon_pink-mobile.png'), url('../img/slide-background-palm-mobile.png'), url('../img/slide-background-mobile.png') 
+				.orange
+					background-image: url('../img/slide-snow-mobile.png'), url('../img/ballon_orange-mobile.png'), url('../img/slide-background-palm-mobile.png'), url('../img/slide-background-mobile.png')
+				.blue
+					background-image: url('../img/slide-snow-mobile.png'), url('../img/ballon_blue-mobile.png'), url('../img/slide-background-palm-mobile.png'), url('../img/slide-background-mobile.png')
+				.aqua
+					background-image: url('../img/slide-snow-mobile.png'), url('../img/ballon_aqua-mobile.png'), url('../img/slide-background-palm-mobile.png'), url('../img/slide-background-mobile.png')
+				.item__subheading
+					display: inline-block
+		.slick-prev
+			left: 35px
+			top: 140px
+			z-index: 1
+			&:before
+				content: ''
+				display: block
+				width: 10px
+				height: 22px
+				background-image: url('../img/slide-arrow.png')
+				transform: rotate(180deg)	
+				background-size: cover	
+		.slick-next
+			right: 35px
+			top: 140px
+			z-index: 1
+			&:before
+				content: ''
+				display: block
+				width: 10px
+				height: 22px
+				background-image: url('../img/slide-arrow.png')	
+				background-size: cover					
+
